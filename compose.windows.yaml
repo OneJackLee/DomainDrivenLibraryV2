@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:18.1-alpine
+    container_name: postgresV2
+    environment:
+      - POSTGRES_DB=library_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql
+    ports:
+      - "5432:5432"
